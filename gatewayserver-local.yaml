@@ -21,6 +21,12 @@ spring:
             uri: lb://customerservice
             predicates:
               - Path=/api/v1/customer/**
+          - id: catalogservice
+            uri: lb://catalogservice
+            predicates:
+              - Path=/api/v1/product/**
+              - Path=/api/v1/catalog/**
+          
 server:
   port: 8091
 eureka:
