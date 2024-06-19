@@ -1,6 +1,6 @@
 spring:
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-server: localhost:9092
     template:
       default-topic: orderTopic
     producer:
