@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/basketdb
+    url: jdbc:postgresql://postgres:5432/tcellcrm
     username: postgres
     password: test
   jpa:
@@ -18,4 +18,4 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-        defaultZone: http://localhost:8888/eureka/
+        defaultZone: http://discovery-server:8888/eureka/
