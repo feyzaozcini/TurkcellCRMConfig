@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://postgres:5433/tcellcrm
+    url: jdbc:postgresql://postgres:5432/tcellcrm
     username: postgres
     password: test
   jpa:
