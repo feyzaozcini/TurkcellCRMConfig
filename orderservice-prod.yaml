@@ -1,4 +1,11 @@
 spring:
+  kafka:
+    bootstrap-servers: kafka:9092
+    template:
+      default-topic: orderTopic
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
   datasource:
     url: jdbc:postgresql://postgres:5432/tcellcrm
     username: postgres
