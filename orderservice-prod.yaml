@@ -1,5 +1,7 @@
 spring:
   kafka:
+    template:
+      default-topic: orderTopic
     producer:
       bootstrap-servers: kafka:29092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
