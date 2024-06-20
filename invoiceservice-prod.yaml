@@ -5,6 +5,11 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       group-id: invoiceservice
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: com.turkcell.common.events
   datasource:
     url: jdbc:postgresql://postgres:5432/tcellcrm
     username: postgres
