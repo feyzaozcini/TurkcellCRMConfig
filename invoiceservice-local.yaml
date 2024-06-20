@@ -11,7 +11,7 @@ spring:
             trusted:
               packages: com.turkcell.common.events
   datasource:
-    url: jdbc:postgresql://localhost:5432/invoicedb
+    url: jdbc:postgresql://localhost:5433/tcellcrm
     username: postgres
     password: test
   jpa:
