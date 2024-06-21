@@ -6,7 +6,7 @@ spring:
           - id: catalogservice
             uri: lb://catalogservice
             predicates:
-              - Path=/api/v1/products/**
+              - Path=/api/v1/product/**
               - Path=/api/v1/catalog/**
           - id: orderservice
             uri: lb://orderservice
