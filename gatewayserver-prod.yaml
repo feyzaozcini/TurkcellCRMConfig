@@ -5,7 +5,7 @@ spring:
         - id: catalogservice
           uri: lb://catalogservice
           predicates:
-            - Path=/api/v1/catalog/**, Path=/api/v1/product/**
+            - Path=/api/v1/catalog/**, /api/v1/product/**
         - id: orderservice
           uri: lb://orderservice
           predicates:
@@ -39,7 +39,7 @@ spring:
         - id: customerservice
           uri: lb://customerservice
           predicates:
-            - Path=/api/v1/individualCustomer/**, Path=/api/v1/address/**, Path=/api/v1/contact/**
+            - Path=/api/v1/individualCustomer/**, /api/v1/address/**, /api/v1/contact/**
 
 server:
   port: 8080
