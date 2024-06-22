@@ -1,37 +1,53 @@
 spring:
   cloud:
     gateway:
-      mvc:
-        routes:
-          - id: eureka
-            uri: http://localhost:8888
-            predicates:
-              - Path=/eureka/web
-            filters:
-              - SetPath=/
-          - id: eureka-static
-            uri: http://localhost:8888
-            predicates:
-              - Path=/eureka/**
-          - id: authserver
-            uri: lb://authserver
-            predicates:
-              - Path=/api/v1/auth/**
-          - id: customerservice
-            uri: lb://customerservice
-            predicates:
-              - Path=/api/v1/customer/**
-          - id: catalogservice
-            uri: lb://catalogservice
-            predicates:
-              - Path=/api/v1/product/**
-              - Path=/api/v1/catalog/**
-          
+      routes:
+        - id: catalogservice
+          uri: lb://catalogservice
+          predicates:
+            - Path=/api/v1/catalog/**,/api/v1/product/**
+        - id: orderservice
+          uri: lb://orderservice
+          predicates:
+            - Path=/api/v1/order/**
+        - id: eureka
+          uri: http://localhost:8888
+          predicates:
+            - Path=/eureka/web
+          filters:
+            - SetPath=/
+        - id: eureka-static
+          uri: http://localhost:8888
+          predicates:
+            - Path=/eureka/**
+        - id: invoiceservice
+          uri: lb://invoiceservice
+          predicates:
+            - Path=/api/v1/invoice/**
+        - id: accountservice
+          uri: lb://accountservice
+          predicates:
+            - Path=/api/v1/account/**
+        - id: authserver
+          uri: lb://authserver
+          predicates:
+            - Path=/api/v1/auth/**
+        - id: basketservice
+          uri: lb://basketservice
+          predicates:
+            - Path=/api/v1/basket/**  
+        - id: customerservice
+          uri: lb://customerservice
+          predicates:
+            - Path=/api/v1/individualCustomer/**,/api/v1/address/**,/api/v1/contact/**
+
 server:
-  port: 8091
+  port: 8080
+
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8888/eureka/
     registerWithEureka: true
     fetchRegistry: true
+
