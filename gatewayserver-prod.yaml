@@ -39,7 +39,7 @@ spring:
             predicates:
               - Path=/api/v1/basket/**  
           - id: customerservice
-            uri: lb://CUSTOMERSERVICE
+            uri: lb://customerservice
             predicates:
               - Path=/api/v1/individualCustomer/**
               - Path=/api/v1/address/**
