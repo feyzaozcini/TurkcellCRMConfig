@@ -1,49 +1,48 @@
 spring:
   cloud:
     gateway:
-      mvc:
-        routes:
-          - id: catalogservice
-            uri: lb://catalogservice
-            predicates:
-              - Path=/api/v1/catalog/**
-              - Path=/api/v1/product/**
-          - id: orderservice
-            uri: lb://orderservice
-            predicates:
-              - Path=/api/v1/order/**
-          - id: eureka
-            uri: http://discovery-server:8888
-            predicates:
-              - Path=/eureka/web
-            filters:
-              - SetPath=/
-          - id: eureka-static
-            uri: http://discovery-server:8888
-            predicates:
-              - Path=/eureka/**
-          - id: invoiceservice
-            uri: lb://invoiceservice
-            predicates:
-              - Path=/api/v1/invoice/**
-          - id: accountservice
-            uri: lb://accountservice
-            predicates:
-              - Path=/api/v1/account/**
-          - id: authserver
-            uri: lb://authserver
-            predicates:
-              - Path=/api/v1/auth/**
-          - id: basketservice
-            uri: lb://basketservice
-            predicates:
-              - Path=/api/v1/basket/**  
-          - id: customerservice
-            uri: lb://customerservice
-            predicates:
-              - Path=/api/v1/individualCustomer/**
-              - Path=/api/v1/address/**
-              - Path=/api/v1/contact/**
+      routes:
+        - id: catalogservice
+          uri: lb://catalogservice
+          predicates:
+            - Path=/api/v1/catalog/**
+            - Path=/api/v1/product/**
+        - id: orderservice
+          uri: lb://orderservice
+          predicates:
+            - Path=/api/v1/order/**
+        - id: eureka
+          uri: http://discovery-server:8888
+          predicates:
+            - Path=/eureka/web
+          filters:
+            - SetPath=/
+        - id: eureka-static
+          uri: http://discovery-server:8888
+          predicates:
+            - Path=/eureka/**
+        - id: invoiceservice
+          uri: lb://invoiceservice
+          predicates:
+            - Path=/api/v1/invoice/**
+        - id: accountservice
+          uri: lb://accountservice
+          predicates:
+            - Path=/api/v1/account/**
+        - id: authserver
+          uri: lb://authserver
+          predicates:
+            - Path=/api/v1/auth/**
+        - id: basketservice
+          uri: lb://basketservice
+          predicates:
+            - Path=/api/v1/basket/**  
+        - id: customerservice
+          uri: lb://customerservice
+          predicates:
+            - Path=/api/v1/individualCustomer/**
+            - Path=/api/v1/address/**
+            - Path=/api/v1/contact/**
 
 server:
   port: 8080
